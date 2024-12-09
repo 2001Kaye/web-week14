@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api/songs")
+@CrossOrigin(origins = ["http://localhost:3000"])
 class SongController(private val service: SongService) {
     @GetMapping
     fun getAllSongs(): List<Song> = service.getAllSongs()
